@@ -1,0 +1,14 @@
+
+dist/
+.parcel-cache/
+
+# 📦 Node modules
+node_modules/
+
+
+
+.parcelrc
+.postcssrc
+
+
+jest.config.js

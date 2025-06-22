@@ -6,11 +6,16 @@
     <title>REACT</title>
 </head>
 <body>
-    <div id="root"></div>
-    <script crossorigin 
+    <div id="root">
+        <h3> Not rendered</h3>
+    </div>
+    
+    <!-- <script crossorigin   //this one way of 
     src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script 
-    crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
 
+    <script type="module" src="./src/App.js">    //whwn adding the type:module , it will conside as the Module--It will not consider as the normal browswer script.
+    </script>
 </body>
 </html>
