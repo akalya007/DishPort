@@ -11,6 +11,7 @@ npm install tailwindcss @tailwindcss/postcss
 
 
 
+
 //creating the script in the package.json.
 start :  parcel index.html    //in development
 build : parcel build index.html    //in production.
@@ -178,7 +179,7 @@ npm i -D @testing-library/react
   npm i -D jest
 
 3. Install babel configuration---it is inside the jest website(copy paste that one line)
-4. Configure babel.(By creating the babel.config.js).
+4. Configure babel.(By creating the babelredu.config.js).
 
 5. configure Parcel config file  to disable default babel transpilation.(go to parcel , scroll down , in the JavaScript go to Babel(which is in right hand side,the go   "Usage with other tools")).
 
@@ -194,7 +195,7 @@ npm i -D @testing-library/react
 
 
 //* Testing code is not run on the browser.it will runs on jsdom.
-//* (jsdom) is not the browser , its like the browser , it gives the super power of the browser. The testing code runs over the jsdom.if we testing the header componenet , header Component will be loads here , in jsdom
+//* (jsdom) is not the browser , its like the browser , it gives the super power of the browser. The testing code runs over the jsdom.if we testing the header componenet , header Component will be loads here , in jsdom 
 
 
 

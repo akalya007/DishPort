@@ -78,21 +78,18 @@ Looks like you'r in Offline , Please check your Internet Connection.
           setfilteredRestaurant(filteredRestaurant);
         }}> Search</button>
         </div>
-
+          
       <div className="search m-4 p-4 flex items-center">
       <button
         className="px-4 py-2 bg-gray-100 rounded-lg" 
         onClick={()=>{ 
           const filteredList = listofRestaurant.filter((res) =>    //in the Second time filtering , it will filter from the listOfRestaurant.
-        res.card.card.info.avgRating >= 4.5
-      )
+        res.card.card.info.avgRating >= 4.5 )
       setfilteredRestaurant(filteredList);
-      }}>  Top Rated Restaurant
-       </button>
+      }}>  Top Rated Restaurant </button>
 
        <label className="ml-16 " >UserName :</label>
-       <input className="border border-black ml-1 "
-       value={loggedInUser}
+       <input className="border border-black ml-1 " value={loggedInUser}
        onChange={(e)=>{setuserName (e.target.value)}}/>
        
    </div>
@@ -104,8 +101,7 @@ Looks like you'r in Offline , Please check your Internet Connection.
            {restaurant.card.card.info.promoted ? (<RestaurantCardPromoted  resData={restaurant.card.card.info}/> 
            ) : (
            <RestaurantCard   // Use the unique restaurant ID as the key than using the Index(hence index as the key is not recommended by the react)
-            resData={restaurant.card.card.info}
-          /> )}
+            resData={restaurant.card.card.info}  /> )}
           </Link>
         ))}
       </div>

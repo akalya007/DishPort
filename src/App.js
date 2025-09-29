@@ -1,4 +1,4 @@
-import React ,{lazy , Suspense, useEffect} from "react";
+import React ,{lazy , Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import './index.css';
 import Header from "./components/Header";
@@ -18,7 +18,6 @@ import Cart from "./components/Cart";
 
 
 const Grocery = lazy(() => import("./components/Grocery"));     //NOTE
-
 const AppLayout = () => {
 
 const [userName , setuserName] = useState();
@@ -122,7 +121,8 @@ root.render(<RouterProvider  router={appRouter}/>);
  * 
  * To pass the Context Information our App--we use ContextProvider.
  * 
- * To Update the UserName form the Input box --> we can have the StateVariable(userName)--we can update from the setuserName....but how can i call this setusername of that userName form the UI, which is in the Body componenet.
+ * To Update the UserName form the Input box --> we can have the StateVariable(userName)--we can update from the setuserName....
+ *                         but how can i call this setusername of that userName form the UI, which is in the Body componenet.
  */
 
 

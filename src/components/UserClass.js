@@ -111,7 +111,7 @@
 
 /**
  * ......NOTE.......IMPORTANT.....
- * In React class components, super(props) is essential within the constructor because it //--initiates the Parent Class..React.Component*,
+ * In React class components, super(props) is essential within the constructor because it //--initiates the Parent Classm ====> React.Component*,
  *  ensuring the component is correctly initialized and allows access to this.props. 
  * This is particularly important for inheriting methods from React.Component and utilizing props passed from the parent. 
  */
@@ -127,7 +127,7 @@
 
 //============================================================================================================================
 
-//GITHUB API CALLS
+//GITHUB API CALLS---origi
 
 import React from 'react';
 
@@ -143,13 +143,13 @@ constructor(props){
  }
 }
 
-//making api calls
+// making api calls
 async componentDidMount(){
     const data = await fetch(" https://api.github.com/users/akalya007");
     const json = await data.json();
     console.log(json);
 
-    this.setState({
+    this.setState({    //setState() triggers another render (→ update phase).
         userInfo:json
     })
 }
@@ -207,6 +207,17 @@ export default UserClass;
 //  * After every first reder--componentDidMount is called
 //  * after every sun sequence render--it is updated
 //  */
+
+/**
+ * 3️⃣ Why “after mounting” is important
+Before mounting, the DOM elements don’t exist yet — if you try to manipulate them, you’ll get null or an error.
+
+By the time componentDidMount runs:
+
+The DOM nodes are ready.
+
+The component is fully live on the screen.
+ */
 
 
 
@@ -290,6 +301,7 @@ export default UserClass;
 // import React from 'react';
 
 // class UserClass extends React.Component{
+
 // constructor(props){
 //  super(props); 
 
@@ -300,6 +312,7 @@ export default UserClass;
 //     }
 //  }
 // }
+
 //  componentDidMount(){
 //  this.timer=setInterval(()=>{    //we have this interval here, we should clean up in the ComponenetWillUnmount()
 //     console.log("Namate react op")
@@ -330,7 +343,7 @@ export default UserClass;
 //         <h2>Name :  {name}</h2>
 //         <h3> Location : {location}</h3>
 //         <h3> Contact : akalyad007 </h3>
-//         </div>
+//          </div>
 //     )
 // }
 // }

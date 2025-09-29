@@ -32,7 +32,7 @@
 
 
 //  const  heading = React.createElement("h1" ,{} , "Hello world from React");       //Recat.createElement--actually craete the js object.--1st argu--what typr of tag--2nd arg--attributes(object)--3rd arg--children or , what content need in the tag.
-//     const root1 = ReactDOM.createRoot(document.getElementById("root"));    //creating the root for putting the h1 element into the browser.
+//     cons t root1 = ReactDOM.createRoot(document.getElementById("root"));    //creating the root for putting the h1 element into the browser.
 //     root.render(heading);   //this render method will convert the js object to the the h1 tag. (Object to html elements)
 
 //Note==>

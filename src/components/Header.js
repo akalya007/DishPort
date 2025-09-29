@@ -39,9 +39,8 @@ console.log("useEffect called");
             <Link to="/cart">Cart-({cartItems.length} items) </Link> </li>
         
           <button className="px-4" onClick={ ()=>{
-            btnNameReact ==="Login" ? setbtnNameReact("Logout"): setbtnNameReact("Login");
-            
-          }}>{btnNameReact}</button>
+            btnNameReact ==="Login" ? setbtnNameReact("Logout"): setbtnNameReact("Login");}}>
+              {btnNameReact}</button>
             <li className="px-4">{loggedInUser}</li>
         </ul>
       </div>
@@ -72,7 +71,7 @@ export default Header;
 /**
  * NOTE 2
  * =====
- * 
+ *  
  useEffect=> Two arguments--callback function , dependency array.
   -It is called after every rendering of the component
  - dependency array changes the behaviour of the render.

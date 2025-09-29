@@ -168,10 +168,10 @@ there is the two phase RENDER PHASE--and --COMMIT PHASE
 
 // return (
 //     <div>
-//       <h1>About</h1>
-//       <h2>This is the about page</h2>
-//       <User name={"First (class)"} location={"Coimbatore class"}/>
-//     </div>
+// //       <h1>About</h1>
+// //       <h2>This is the about page</h2>
+// //       <User name={"First (class)"} location={"Coimbatore class"}/>
+// //     </div>
 //   );
 // }}
 
@@ -189,9 +189,9 @@ import UserClass from "./UserClass";
 import UserContext from "../utils/UserContext";
 
 class About extends Component{  
+
 constructor(props){
 super(props);
-
 }
 
 componentDidMount(){    
@@ -206,8 +206,8 @@ return (
       <h1>About Me....</h1>
       <UserContext.Consumer > 
       {({loggedInUser}) => <h2 className="font-bold">{loggedInUser}</h2> }
-
       </UserContext.Consumer>
+      
       <h2>This is the about page</h2>
       <UserClass name={"First (class)"} location={"Coimbatore class"}/>
     </div>

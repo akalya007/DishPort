@@ -31,32 +31,40 @@
 // export default ItemList;
 
 //==================================================================
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CDN_URL } from "../utils/constants";
-import { addItem } from "../utils/cartSlice";
+import { addItem, removeItem } from "../utils/cartSlice"; // make sure removeItem exists
 
 const ItemList = ({ items }) => {
   console.log("items", items);
 
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const cartItems = useSelector((store) => store.cart.items); // get cart from Redux
 
   // const handleAddItem = ()=>{
   //   //Dispatch an action.
   //     dispatch(addItem(" pizza"));   //what ever i passed inside this , it will go inside my cart.//Note👇
   // }
 
- const handleAddItem = (item)=>{
-    //Dispatch an action.
-      dispatch(addItem(item));   //what ever i passed inside this , it will go inside my cart.//Note👇
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));   // Add item to cart
   }
 
+  const handleRemoveItem = (item) => {
+    dispatch(removeItem(item)); // Remove item from cart
+  }
 
+  // Helper to get count of a particular item in cart
+  const getItemCount = (itemId) => {
+    return cartItems.filter((cartItem) => cartItem.card.info.id === itemId).length;
+  }
 
   return (
     <div>
-      {items.map((item) => (
-        <div
-          key={item.card.info.id}
+      {items.map((item, index) => {
+        const count = getItemCount(item.card.info.id); // current count of this item
+        return (
+        <div key={item.card.info.id + "-" + index} // ✅ unique key fix
           className="p-4 my-4 border-b-2 border-gray-200 text-left flex justify-between bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
         >
           <div className="w-9/12 pr-4">
@@ -80,19 +88,30 @@ const dispatch = useDispatch();
               src={CDN_URL + item.card.info.imageId}
               className="w-24 h-24 object-cover rounded-md border border-gray-100"
             />
-            <button className="absolute bottom-2 px-4 py-1 bg-black text-white text-sm rounded-md shadow-md hover:bg-gray-800 transition-all duration-200"
-             onClick={()=>{handleAddItem(item)}}
-            >
-              Add +
-            </button>
+            <div className="absolute bottom-2 flex space-x-2">
+              <button 
+                className="px-4 py-1 bg-black text-white text-sm rounded-md shadow-md hover:bg-gray-800 transition-all duration-200"
+                onClick={() => handleAddItem(item)}
+              >
+                Add {count > 0 && count} {/* shows count if > 0 */}
+              </button>
+              <button 
+                className="px-4 py-1 bg-red-600 text-white text-sm rounded-md shadow-md hover:bg-red-500 transition-all duration-200"
+                onClick={() => handleRemoveItem(item)}
+              >
+                -
+              </button>
+            </div>
           </div>
         </div>
-      ))}
+        )
+      })}
     </div>
   );
 };
 
 export default ItemList;
+
 
 
 /**

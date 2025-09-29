@@ -18,8 +18,7 @@ const handleClearCart =()=>{
         <div className="text-center m-4 p-4"> 
         <div className="text-2xl font-bold">Cart</div>
         <button className="m-2 p-2 bg-black text-white rounded-lg"
-        onClick={handleClearCart}
-        > Clear cart</button>
+        onClick={handleClearCart}> Clear cart</button>
         
       <div className="w-6/12 m-auto">
         {/*  Show message when cart is empty */}

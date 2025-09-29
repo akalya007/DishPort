@@ -26,6 +26,7 @@ const {loggedInUser} = useContext(UserContext);
 
 
 //Higher order Components---that takes the RestaurantCard components enhances(RestaurantCard With the promoted  label) and returns the new Component.
+//A Higher-Order Component (HOC) is a function that takes a React component as an argument and returns a new, enhanced component
 
 //input ==>RestaurantCard ==>RestaurantCardPromoted.
 //"withPromotedLabel" --is the higherorder component
@@ -44,3 +45,9 @@ return(
 
 
  export default RestaurantCard;
+
+
+ /**
+  * 1. RestaurantCard.js
+Purpose: Displays a single restaurant card in the home page restaurant list.
+  */

@@ -1,63 +1,63 @@
-// // import { useEffect , useState } from "react";
-// // import Shimmer from "./Shimmer";
-// // import { useParams } from "react-router-dom";
-// // import { MENU_API } from "../utils/constants";
+// import { useEffect , useState } from "react";
+// import Shimmer from "./Shimmer";
+// import { useParams } from "react-router-dom";
+// import { MENU_API } from "../utils/constants";
 
-// // const RestaurantMenu = () => {
+// const RestaurantMenu = () => {
 
-// // const [resInfo , setresInfo ] = useState(null);
-// // const {resId} = useParams();
+// const [resInfo , setresInfo ] = useState(null);
+// const {resId} = useParams();
 
 
-// // useEffect(()=>{
-// //    fetchMenu();
-// // },[]);
+// useEffect(()=>{
+//    fetchMenu();
+// },[]);
 
-// //   const fetchMenu = async()=>{
-// //       const data = await fetch(MENU_API + resId);
-// //   //"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&collection=80463&tags=&sortBy=&filters=&type=rcv2&offset=0&page_type=null"
+//   const fetchMenu = async()=>{
+//       const data = await fetch(MENU_API + resId);
+//   //"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&collection=80463&tags=&sortBy=&filters=&type=rcv2&offset=0&page_type=null"
  
-// // //"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&collection=83633&tags=layout_CCS_NorthIndian&sortBy=&filters=&type=rcv2&offset=0&page_type=null"
+// //"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&collection=83633&tags=layout_CCS_NorthIndian&sortBy=&filters=&type=rcv2&offset=0&page_type=null"
 
-// //       const json = await data.json();
-// //       //console.log(json);   //using the data, we want to show the restaurant name,menu etc--bu using the useState();
-// //       setresInfo(json);
+//       const json = await data.json();
+//       //console.log(json);   //using the data, we want to show the restaurant name,menu etc--bu using the useState();
+//       setresInfo(json);
   
-// //     }
-// //  if(resInfo === null) return <Shimmer />;
+//     }
+//  if(resInfo === null) return <Shimmer />;
 
-// // const { name, costForTwo, cuisines, avgRating } =resInfo?.data?.cards[2]?.card?.card?.info ;
-// // //const itemCards = groupedCards.filter(card => card?.card?.card?.itemCards) || [];
-// // const itemCards = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card?.card?.itemCards || [];
-// // console.log("===++" , itemCards);
+// const { name, costForTwo, cuisines, avgRating } =resInfo?.data?.cards[2]?.card?.card?.info ;
+// //const itemCards = groupedCards.filter(card => card?.card?.card?.itemCards) || [];
+// const itemCards = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card?.card?.itemCards || [];
+// console.log("===++" , itemCards);
 
-// //   return (
-// //    <div className="menu">
-// //     <h2>{name}</h2>
-// //     <p> {cuisines.join(",")} - {costForTwo /100} </p>
-// //     <h2>{avgRating}</h2>
-// //     <h2>Menu</h2>
+//   return (
+//    <div className="menu">
+//     <h2>{name}</h2>
+//     <p> {cuisines.join(",")} - {costForTwo /100} </p>
+//     <h2>{avgRating}</h2>
+//     <h2>Menu</h2>
    
-// //    <ul>
-// //     {itemCards.map((item) => (
-// //       <li key={item.card.info.id}>
-// //         {item.card.info.name} -{" Rs"}
-// //         {item.card.info.price /100 || item.card.info.price /100}</li>
-// //   ))}
-// //    </ul>
-// //    </div>
-// //   )
-// // }
+//    <ul>
+//     {itemCards.map((item) => (
+//       <li key={item.card.info.id}>
+//         {item.card.info.name} -{" Rs"}
+//         {item.card.info.price /100 || item.card.info.price /100}</li>
+//   ))}
+//    </ul>
+//    </div>
+//   )
+// }
 
-// // export default RestaurantMenu
+// export default RestaurantMenu
 
 
-// //==============================================================================================================================================================
+//==============================================================================================================================================================
 
-// //this RestaurantMenu Component has both fetching the data deom the api , and then displaying the data--hence creating the custom hooks for having the Modularity in the code--
-// //creating the useRestaurantMenu() hook for fetching the data.
+// this RestaurantMenu Component has both fetching the data deom the api , and then displaying the data--hence creating the custom hooks for having the Modularity in the code--
+// creating the useRestaurantMenu() hook for fetching the data.
 
-// //hence it contains code only displaying it.--hence now it is easy for testing  reusable,Modularity.
+// hence it contains code only displaying it.--hence now it is easy for testing  reusable,Modularity.
 
 // import useRestaurantMenu from "../utils/useRestaurant";
 // import Shimmer from "./Shimmer";
@@ -228,7 +228,7 @@ const { name, costForTwo, cuisines, avgRating } =resInfo?.data?.cards[2]?.card?.
 //const itemCards = groupedCards.filter(card => card?.card?.card?.itemCards) || [];
 const itemCards = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card?.card?.itemCards || [];
 ////console.log("===++" , itemCards);
-console.log("==>" , resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+// console.log("==>" , resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
 
 const categories = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
   (c) => c.card?.["card"]?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
